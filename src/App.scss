@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+.info {
+  width: 100%;
+  height: 100vh;
+  background-color: midnightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  form {
+    width: 200px;
+    input {
+      width: 100%;
+      padding: 7px;
+      color: #999;
+      height: 30px;
+      background-color: white;
+      border-radius: 7px;
+      margin-bottom: 12px;
+      outline: none;
+    }
+    button {
+      outline: none;
+      width: 100%;
+      padding: 6px;
+      background-color: dodgerblue;
+      color: white;
+      text-transform: uppercase;
+      border-radius: 7px;
+    }
+  }
+}
+.container {
+  display: flex;
+  height: 100vh;
+}
+.game {
+  position: relative;
+  background: url("https://i.pinimg.com/originals/f1/17/23/f11723f9894882a76ce18a626cc5ad69.jpg");
+  background-size: cover;
+  height: 100%;
+  width: 70%;
+  h2 {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .timer {
+    width: 60px;
+    height: 60px;
+    border-radius: 100rem;
+    text-align: center;
+    line-height: 60px;
+    border: 3px solid white;
+    color: white;
+    font-size: 25px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 16%;
+  }
+  .quizz {
+    width: 70%;
+    position: absolute;
+    top: 60%;
+    left: 16%;
+    text-align: center;
+    color: white;
+    .question {
+      background: linear-gradient(#100241, black);
+      padding: 20px;
+      margin-bottom: 50px;
+      border-radius: 10px;
+    }
+    .answers {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      p {
+        background: linear-gradient(#0e0124, #22074d);
+        padding: 10px;
+        border: 1px solid white;
+        border-radius: 65px;
+        font-weight: 300;
+        font-size: 20px;
+        &:hover,
+        &.active {
+          background: mediumblue;
+        }
+        &.animate {
+          animation: blink 3s forwards ease;
+        }
+        &.true {
+          background: #33d40f;
+        }
+        &.false {
+          background: red;
+        }
+      }
+    }
+  }
+}
+@keyframes blink {
+  0%,
+  22%,
+  42% {
+    background: mediumblue;
+  }
+  20%,
+  40%,
+  60% {
+    background: linear-gradient(#0e0124, #22074d);
+  }
+  62%,
+  100% {
+    background: mediumblue;
+  }
+}
+.progress {
+  overflow: scroll;
+  flex: 1;
+  height: 100%;
+  background-color: midnightblue;
+  padding: 12px;
+  .option {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    button {
+      padding: 8px 16px;
+      border: none;
+      outline: none;
+      color: white;
+      background-color: skyblue;
+      &:last-child {
+        background-color: white;
+        color: black;
+      }
+    }
+  }
+  .details {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 6px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid white;
+    color: white;
+  }
+  .money {
+    margin-top: 20px;
+    text-align: center;
+    p {
+      padding-top: 6px;
+      padding-bottom: 10px;
+      color: white;
+      &.active,
+      &:hover {
+        background-color: darkcyan;
+      }
+    }
+  }
+}
